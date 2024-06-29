@@ -5,6 +5,11 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Text('hello World');
+    return const Center(
+      child: Text(
+        'hello World',
+        style: TextStyle(fontSize: 22),
+      ),
+    );
   }
 }
