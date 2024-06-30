@@ -10,9 +10,6 @@ class TextFieldSearch extends StatelessWidget {
         enabledBorder: buildOutlineInputBordar(),
         focusedBorder: buildOutlineInputBordar(),
         labelText: 'Search',
-        labelStyle: const TextStyle(color: Colors.grey),
-        hintText: 'search a new weather ',
-        hintStyle: const TextStyle(color: Colors.grey),
         suffixIcon: const Icon(
           Icons.search,
           color: Colors.white,

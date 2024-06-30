@@ -1,3 +1,13 @@
+import 'package:flutter/material.dart';
+
 class AssetsData {
-  static const logo = 'images/000-1-1.jpg';
+  static const logo = Center(
+      child: Text(
+    'Weater App ⛈',
+    style: TextStyle(
+      color: Colors.white,
+      fontSize: 25,
+      fontWeight: FontWeight.bold,
+    ),
+  ));
 }
