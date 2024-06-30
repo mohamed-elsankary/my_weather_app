@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:weather_app/features/home/persentation/views/home_view_body.dart';
-import 'package:weather_app/features/home/persentation/views/widgets/search_view.dart';
+import 'package:weather_app/features/search/views/search_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -9,6 +10,12 @@ class HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text(
+          'Weather App',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
         actions: [
           IconButton(
             iconSize: 30,
@@ -23,7 +30,7 @@ class HomeView extends StatelessWidget {
             color: Colors.white,
           ),
         ],
-        backgroundColor: Colors.blue,
+        backgroundColor: const Color.fromARGB(255, 66, 108, 187),
       ),
       body: const HomeViewBody(),
     );

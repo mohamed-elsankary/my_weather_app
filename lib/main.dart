@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+import 'package:weather_app/core/utils/widget/app_router.dart';
 import 'package:weather_app/features/home/home_view.dart';
 
 void main() {
@@ -10,9 +12,9 @@ class WeatherApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp.router(
+      routerConfig: AppRouter.router,
       debugShowCheckedModeBanner: false,
-      home: HomeView(),
     );
   }
 }
