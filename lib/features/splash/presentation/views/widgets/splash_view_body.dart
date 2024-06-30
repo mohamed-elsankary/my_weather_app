@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:weather_app/constant.dart';
 import 'package:weather_app/core/utils/widget/app_router.dart';
 import 'package:weather_app/core/utils/widget/assets.dart';
 import 'package:weather_app/features/splash/presentation/views/widgets/sliding_text.dart';
@@ -31,11 +32,12 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          AssetsData.logo,
+          Image.asset(kLogo),
           const SizedBox(
             height: 4,
           ),
@@ -56,7 +58,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
 
   void navigateToHome() {
     Future.delayed(
-      const Duration(seconds: 3),
+      const Duration(seconds: 2),
       () {
         GoRouter.of(context).push(AppRouter.kHomeView);
       },

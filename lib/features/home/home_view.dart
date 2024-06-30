@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:weather_app/constant.dart';
-import 'package:weather_app/core/utils/widget/app_router.dart';
-
-import 'package:weather_app/features/home/persentation/views/home_view_body.dart';
+import 'package:weather_app/core/utils/widget/assets.dart';
+import 'package:weather_app/features/search/views/widgets/text_field_Search.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -11,26 +9,33 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: const Text(
-            'Weather App',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+      body: SafeArea(
+        child: Container(
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(kBackground),
+              fit: BoxFit.fill,
             ),
           ),
-          actions: [
-            IconButton(
-              iconSize: 30,
-              onPressed: () {
-                GoRouter.of(context).push(AppRouter.kSearchView);
-              },
-              icon: const Icon(Icons.search),
-              color: Colors.white,
-            ),
-          ],
-          backgroundColor: kBackgroundColor),
-      body: const HomeViewBody(),
+          child: const Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: 50, left: 15, right: 15),
+                child: TextFieldSearch(),
+              ),
+              SizedBox(
+                height: 350,
+              ),
+              Center(
+                child: Text(
+                  'Start Search for city',
+                  style: TextStyle(fontSize: 25),
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
     );
   }
 }
