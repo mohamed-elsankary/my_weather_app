@@ -6,6 +6,7 @@ class TextFieldSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         filled: true,
         fillColor: const Color(0xff262428),

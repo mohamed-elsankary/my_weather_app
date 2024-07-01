@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:weather_app/constant.dart';
 import 'package:weather_app/core/utils/widget/app_router.dart';
-import 'package:weather_app/core/utils/widget/assets.dart';
 import 'package:weather_app/features/splash/presentation/views/widgets/sliding_text.dart';
 
 class SplashViewBody extends StatefulWidget {

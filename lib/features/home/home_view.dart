@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/constant.dart';
-import 'package:weather_app/core/utils/widget/assets.dart';
+
 import 'package:weather_app/features/search/views/widgets/text_field_Search.dart';
 
 class HomeView extends StatelessWidget {
@@ -29,7 +29,10 @@ class HomeView extends StatelessWidget {
               Center(
                 child: Text(
                   'Start Search for city',
-                  style: TextStyle(fontSize: 25),
+                  style: TextStyle(
+                    fontSize: 25,
+                    color: Colors.white,
+                  ),
                 ),
               )
             ],
