@@ -17,7 +17,7 @@ class WeatherApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         textTheme: GoogleFonts.tekturTextTheme(
-          Theme.of(context).textTheme,
+          ThemeData.dark().textTheme,
         ),
       ),
     );

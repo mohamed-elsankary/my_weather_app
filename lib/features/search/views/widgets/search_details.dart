@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:weather_app/constant.dart';
 import 'package:weather_app/features/search/views/widgets/list_view_container.dart';
-import 'package:weather_app/features/search/views/widgets/search_widget_list_view.dart';
 import 'package:weather_app/features/search/views/text_field_Search_view.dart';
 import 'package:weather_app/features/search/views/widgets/text_search_details.dart';
 import 'package:weather_app/features/search/views/widgets/todey_search_details.dart';
@@ -36,9 +33,12 @@ class SearchDetails extends StatelessWidget {
                     ),
                     TextSearchDetails(),
                     SizedBox(
-                      height: 15,
+                      height: 30,
                     ),
                     ListViewContainer(),
+                    SizedBox(
+                      height: 30,
+                    ),
                   ],
                 ),
               ),

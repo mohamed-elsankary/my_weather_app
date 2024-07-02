@@ -9,9 +9,7 @@ class TextSearchDetails extends StatelessWidget {
       children: [
         Text(
           'The next two days in ',
-          style: TextStyle(
-            color: Colors.white,
-          ),
+          style: TextStyle(),
         ),
         Text(
           'Mansoura',

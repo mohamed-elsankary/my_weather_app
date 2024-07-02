@@ -31,7 +31,6 @@ class HomeView extends StatelessWidget {
                   'Start Search for city',
                   style: TextStyle(
                     fontSize: 25,
-                    color: Colors.white,
                   ),
                 ),
               )
