@@ -20,13 +20,10 @@ class HomeView extends StatelessWidget {
           child: const Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(top: 50, left: 15, right: 15),
+                padding: EdgeInsets.all(20),
                 child: TextFieldSearch(),
               ),
-              SizedBox(
-                height: 350,
-              ),
-              Center(
+              Expanded(
                 child: Text(
                   'Start Search for city',
                   style: TextStyle(
