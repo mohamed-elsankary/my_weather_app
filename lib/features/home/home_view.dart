@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/constant.dart';
 
-import 'package:weather_app/features/search/views/widgets/text_field_Search.dart';
+import 'package:weather_app/features/search/views/text_field_Search_view.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -21,7 +21,10 @@ class HomeView extends StatelessWidget {
             children: [
               Padding(
                 padding: EdgeInsets.all(20),
-                child: TextFieldSearch(),
+                child: TextFieldSearchView(),
+              ),
+              SizedBox(
+                height: 350,
               ),
               Expanded(
                 child: Text(
