@@ -1,13 +1,16 @@
 import 'package:dio/dio.dart';
+import 'package:weather_app/features/home/persentation/data/models/weather_model.dart';
 
 class ApiService {
-  final _baseUrl =
-      'http://api.weatherapi.com/v1/marine.json?key=933b8e9ec7d54634b16100839241903&q=cairo&days=3';
-  final Dio _dio;
-  ApiService(this._dio);
+  final String _baseUrl = 'http://api.weatherapi.com/v1';
+  final String apiKey = '933b8e9ec7d54634b16100839241903';
+  final Dio dio;
+  ApiService(this.dio);
 
-  Future<Map<String, dynamic>> getWeather() async {
-    final response = await _dio.get(_baseUrl);
-    return response.data;
+  Future<WeatherModel> getWeather({required String cityName}) async {
+    final response =
+        await dio.get('$_baseUrl/forecast.json?key=$apiKey&q=$cityName&days=3');
+    WeatherModel weatherModel = WeatherModel.fromJson(response.data);
+    return weatherModel;
   }
 }

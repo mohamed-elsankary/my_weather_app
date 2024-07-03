@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:weather_app/features/home/persentation/data/models/weather_model.dart';
 
 class TodeySearchDetails extends StatelessWidget {
-  const TodeySearchDetails({super.key});
+  const TodeySearchDetails({super.key, required this.weatherModel});
+  final WeatherModel weatherModel;
 
   @override
   Widget build(BuildContext context) {
@@ -16,16 +19,17 @@ class TodeySearchDetails extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const Row(
+          Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
+              const Text(
                 'Today',
                 style: TextStyle(fontSize: 25),
               ),
               Text(
-                'Thu, 21 Oct',
-                style: TextStyle(fontSize: 16),
+                DateFormat("d MMM, yyyy")
+                    .format(DateTime.parse(weatherModel.current!.lastUpdated!)),
+                style: const TextStyle(fontSize: 16),
               ),
             ],
           ),

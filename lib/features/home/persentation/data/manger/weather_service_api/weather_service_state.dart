@@ -5,7 +5,7 @@ sealed class WeatherServiceState {}
 final class WeatherServiceInitial extends WeatherServiceState {}
 
 final class WeatherServiceSuccess extends WeatherServiceState {
-  final List<WeatherModel> weatherModel;
+  final WeatherModel weatherModel;
 
   WeatherServiceSuccess(this.weatherModel);
 }

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/features/home/persentation/data/manger/weather_service_api/weather_service_cubit.dart';
 
 class TextFieldSearchView extends StatelessWidget {
   const TextFieldSearchView({super.key});
@@ -6,6 +8,9 @@ class TextFieldSearchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      onSubmitted: (value) {
+        context.read<WeatherServiceCubit>().fetchWeather(cityName: value);
+      },
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         filled: true,
