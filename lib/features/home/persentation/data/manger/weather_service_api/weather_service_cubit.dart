@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:weather_app/features/home/persentation/data/models/weather/astro.model.dart';
+import 'package:weather_app/features/home/persentation/data/models/weather_model.dart';
+
 part 'weather_service_state.dart';
 
 class WeatherServiceCubit extends Cubit<WeatherServiceState> {
