@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/features/search/views/widgets/weather_details.dart';
 
 class TodeySearchDetails extends StatelessWidget {
   const TodeySearchDetails({super.key});
