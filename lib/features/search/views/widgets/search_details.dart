@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/constant.dart';
-import 'package:weather_app/features/search/views/widgets/list_view_container.dart';
+import 'package:weather_app/features/search/views/widgets/today_weather.dart';
 import 'package:weather_app/features/search/views/text_field_Search_view.dart';
 import 'package:weather_app/features/search/views/widgets/text_search_details.dart';
-import 'package:weather_app/features/search/views/widgets/todey_search_details.dart';
+import 'package:weather_app/features/search/views/widgets/days_weather_details.dart';
 
 class SearchDetails extends StatelessWidget {
   const SearchDetails({super.key});
@@ -28,12 +28,10 @@ class SearchDetails extends StatelessWidget {
                 child: Column(
                   children: [
                     TodeySearchDetails(),
-                    SizedBox(
-                      height: 90,
-                    ),
+                    SizedBox(height: 135),
                     TextSearchDetails(),
                     SizedBox(
-                      height: 30,
+                      height: 40,
                     ),
                     ListViewContainer(),
                     SizedBox(
