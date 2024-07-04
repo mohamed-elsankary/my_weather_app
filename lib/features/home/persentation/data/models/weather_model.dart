@@ -58,20 +58,32 @@ class Location {
 
 class Current {
   String? lastUpdated;
+  double? tempC;
+
+  Condition? condition;
 
   Current({
     this.lastUpdated,
+    this.tempC,
+    this.condition,
   });
 
   Current.fromJson(Map<String, dynamic> json) {
     lastUpdated = json['last_updated'];
+    tempC = json['temp_c'];
+
+    condition = json['condition'] != null
+        ? Condition.fromJson(json['condition'])
+        : null;
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-
     data['last_updated'] = lastUpdated;
-
+    data['temp_c'] = tempC;
+    if (condition != null) {
+      data['condition'] = condition!.toJson();
+    }
     return data;
   }
 }

@@ -10,7 +10,7 @@ class ListViewContainer extends StatelessWidget {
     return SizedBox(
       height: 230,
       child: ListView.builder(
-        itemCount: 2,
+        itemCount: weatherModel.forecast!.forecastday!.length,
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) => Padding(
           padding: const EdgeInsets.only(right: 15),
@@ -21,27 +21,32 @@ class ListViewContainer extends StatelessWidget {
               borderRadius: BorderRadius.circular(30),
               color: const Color(0xff131313),
             ),
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       'Date',
                       style: TextStyle(fontSize: 20),
                     ),
-                    Text('Thu, 21 Oct'),
+                    // Text(
+                    //   DateFormat("E, d MMM").format(DateTime.parse('')),
+                    //   style: const TextStyle(fontSize: 16),
+                    // ),
                   ],
                 ),
-                WeatherDetails(),
+                const WeatherDetails(),
                 Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.location_on,
                       color: Colors.amber,
                     ),
-                    Text('Mansoura,Egypt'),
+                    Text(
+                      '${weatherModel.location!.name}, ${weatherModel.location!.region}, ${weatherModel.location!.country}',
+                    ),
                   ],
                 ),
               ],

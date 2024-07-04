@@ -36,10 +36,10 @@ class TodeySearchDetails extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              const Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+                  const Row(
                     children: [
                       Text(
                         '32',
@@ -52,24 +52,26 @@ class TodeySearchDetails extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    'Clear',
-                    style: TextStyle(color: Colors.grey, fontSize: 22),
+                    '${weatherModel.current!.condition!.text}',
+                    style: const TextStyle(color: Colors.grey, fontSize: 22),
                   ),
                 ],
               ),
-              Image.asset(
-                'image/icon.jpg',
-                height: 50,
+              Image.network(
+                "https:${weatherModel.current!.condition!.icon}",
+                height: 120,
               ),
             ],
           ),
-          const Row(
+          Row(
             children: [
-              Icon(
+              const Icon(
                 Icons.location_on,
                 color: Colors.amber,
               ),
-              Text('Mansoura,Egypt'),
+              Text(
+                '${weatherModel.location!.name}, ${weatherModel.location!.region}, ${weatherModel.location!.country}',
+              ),
             ],
           ),
         ],

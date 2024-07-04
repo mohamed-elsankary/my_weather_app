@@ -41,7 +41,9 @@ class HomeView extends StatelessWidget {
                             weatherModel: state.weatherModel,
                           ),
                           const SizedBox(height: 135),
-                          const TextSearchDetails(),
+                          TextSearchDetails(
+                            weatherModel: state.weatherModel,
+                          ),
                           const SizedBox(
                             height: 40,
                           ),
