@@ -9,7 +9,7 @@ class TextSearchDetails extends StatelessWidget {
     return Row(
       children: [
         const Text(
-          'The next two days in ',
+          'The next Three days in ',
           style: TextStyle(),
         ),
         Text(

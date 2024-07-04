@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app/features/home/persentation/data/models/weather_model.dart';
 import 'package:weather_app/features/search/views/widgets/min_max_temp.dart';
 
@@ -11,6 +12,7 @@ class ListViewContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final d1 = weatherModel.forecast!.forecastday![1].day!;
     return SizedBox(
       height: 230,
       child: ListView.builder(
@@ -28,36 +30,38 @@ class ListViewContainer extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
+                    const Text(
                       'Date',
                       style: TextStyle(fontSize: 20),
                     ),
-                    // Text(
-                    //   DateFormat("E, d MMM")
-                    //       .format(DateTime.parse()),
-                    //   style: const TextStyle(fontSize: 16),
-                    // ),
+                    Text(
+                      DateFormat("E, d MMM").format(DateTime.parse(
+                          weatherModel.forecast!.forecastday![1].date!)),
+                      style: const TextStyle(fontSize: 16),
+                    ),
                   ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Column(
+                    Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        MinMaxTemp(weather: 'Max', number: 12),
-                        MinMaxTemp(weather: 'Min', number: 23),
+                        MinMaxTemp(
+                            weather: 'Max', number: d1.maxtempC!.toInt()),
+                        MinMaxTemp(
+                            weather: 'Min', number: d1.mintempC!.toInt()),
                         Text(
-                          'Clear',
-                          style: TextStyle(color: Colors.grey),
+                          '${weatherModel.forecast!.forecastday![1].day!.condition!.text}',
+                          style: const TextStyle(color: Colors.grey),
                         ),
                       ],
                     ),
-                    Image.asset(
-                      'image/icon.jpg',
+                    Image.network(
+                      'https:${weatherModel.forecast!.forecastday![1].day!.condition!.icon}',
                       height: 50,
                     ),
                   ],

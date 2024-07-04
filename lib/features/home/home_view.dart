@@ -50,9 +50,7 @@ class HomeView extends StatelessWidget {
                           ListViewContainer(
                             weatherModel: state.weatherModel,
                           ),
-                          const SizedBox(
-                            height: 30,
-                          ),
+                          const SizedBox(height: 30),
                         ],
                       );
                     }

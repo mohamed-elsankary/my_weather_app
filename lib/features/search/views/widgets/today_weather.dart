@@ -42,7 +42,7 @@ class TodeySearchDetails extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        '${weatherModel.current!.tempC}',
+                        '${weatherModel.current!.tempC!.toInt()}',
                         style: const TextStyle(fontSize: 38),
                       ),
                       const Text(

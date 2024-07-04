@@ -8,7 +8,7 @@ class MinMaxTemp extends StatelessWidget {
   });
 
   final String weather;
-  final int number;
+  final num number;
 
   @override
   Widget build(BuildContext context) {
