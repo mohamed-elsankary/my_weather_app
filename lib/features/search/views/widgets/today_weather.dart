@@ -39,13 +39,13 @@ class TodeySearchDetails extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Row(
+                  Row(
                     children: [
                       Text(
-                        '32',
-                        style: TextStyle(fontSize: 38),
+                        '${weatherModel.current!.tempC}',
+                        style: const TextStyle(fontSize: 38),
                       ),
-                      Text(
+                      const Text(
                         ' °C ',
                         style: TextStyle(color: Colors.amber, fontSize: 25),
                       ),

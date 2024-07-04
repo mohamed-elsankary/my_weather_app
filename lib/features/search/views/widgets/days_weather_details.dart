@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/features/home/persentation/data/models/weather_model.dart';
-import 'package:weather_app/features/search/views/widgets/weather_details.dart';
+import 'package:weather_app/features/search/views/widgets/min_max_temp.dart';
 
 class ListViewContainer extends StatelessWidget {
-  const ListViewContainer({super.key, required this.weatherModel});
+  const ListViewContainer({
+    super.key,
+    required this.weatherModel,
+  });
   final WeatherModel weatherModel;
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -32,12 +36,32 @@ class ListViewContainer extends StatelessWidget {
                       style: TextStyle(fontSize: 20),
                     ),
                     // Text(
-                    //   DateFormat("E, d MMM").format(DateTime.parse('')),
+                    //   DateFormat("E, d MMM")
+                    //       .format(DateTime.parse()),
                     //   style: const TextStyle(fontSize: 16),
                     // ),
                   ],
                 ),
-                const WeatherDetails(),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        MinMaxTemp(weather: 'Max', number: 12),
+                        MinMaxTemp(weather: 'Min', number: 23),
+                        Text(
+                          'Clear',
+                          style: TextStyle(color: Colors.grey),
+                        ),
+                      ],
+                    ),
+                    Image.asset(
+                      'image/icon.jpg',
+                      height: 50,
+                    ),
+                  ],
+                ),
                 Row(
                   children: [
                     const Icon(

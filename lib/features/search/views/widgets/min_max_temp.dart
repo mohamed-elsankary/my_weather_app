@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
-class MaxMinWeather extends StatelessWidget {
-  const MaxMinWeather({super.key, required this.number, required this.weather});
-  final int number;
+class MinMaxTemp extends StatelessWidget {
+  const MinMaxTemp({
+    super.key,
+    required this.weather,
+    required this.number,
+  });
+
   final String weather;
+  final int number;
+
   @override
   Widget build(BuildContext context) {
     return Row(
