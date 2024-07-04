@@ -29,7 +29,8 @@ class TodeySearchDetails extends StatelessWidget {
               Text(
                 DateFormat("d MMM, yyyy")
                     .format(DateTime.parse(weatherModel.current!.lastUpdated!)),
-                style: const TextStyle(fontSize: 16),
+                style:
+                    const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
               ),
             ],
           ),
@@ -60,6 +61,7 @@ class TodeySearchDetails extends StatelessWidget {
               Image.network(
                 "https:${weatherModel.current!.condition!.icon}",
                 height: 120,
+                width: 150,
               ),
             ],
           ),
