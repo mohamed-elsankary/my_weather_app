@@ -63,7 +63,8 @@ class HomeView extends StatelessWidget {
                     if (state is WeatherServiceFailuer) {
                       return Text(
                         state.errorMassage,
-                        style: const TextStyle(color: Colors.red),
+                        style: const TextStyle(
+                            color: Colors.red, fontWeight: FontWeight.bold),
                       );
                     }
 

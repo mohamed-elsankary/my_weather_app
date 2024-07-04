@@ -16,15 +16,16 @@ class MinMaxTemp extends StatelessWidget {
       children: [
         Text(
           '$weather :',
-          style: const TextStyle(color: Colors.orange),
+          style:
+              const TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),
         ),
         Text(
           ' $number ',
-          style: const TextStyle(fontSize: 17),
+          style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
         ),
         const Text(
           '°c ',
-          style: TextStyle(color: Colors.orange),
+          style: TextStyle(color: Colors.amber, fontWeight: FontWeight.bold),
         ),
       ],
     );

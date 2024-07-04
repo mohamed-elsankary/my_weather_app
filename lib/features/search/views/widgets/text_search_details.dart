@@ -10,13 +10,11 @@ class TextSearchDetails extends StatelessWidget {
       children: [
         const Text(
           'The next Three days in ',
-          style: TextStyle(),
         ),
         Text(
           weatherModel.location!.name!,
           style: const TextStyle(
-            color: Colors.orange,
-          ),
+              color: Colors.amber, fontSize: 18, fontWeight: FontWeight.bold),
         ),
       ],
     );

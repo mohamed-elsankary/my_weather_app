@@ -71,6 +71,9 @@ class TodeySearchDetails extends StatelessWidget {
               ),
               Text(
                 '${weatherModel.location!.name}, ${weatherModel.location!.region}, ${weatherModel.location!.country}',
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),

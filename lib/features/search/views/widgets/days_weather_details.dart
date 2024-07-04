@@ -35,12 +35,14 @@ class ListViewContainer extends StatelessWidget {
                   children: [
                     const Text(
                       'Date',
-                      style: TextStyle(fontSize: 20),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     Text(
                       DateFormat("E, d MMM").format(DateTime.parse(
                           weatherModel.forecast!.forecastday![1].date!)),
-                      style: const TextStyle(fontSize: 16),
+                      style: const TextStyle(
+                          fontSize: 16, fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -74,6 +76,9 @@ class ListViewContainer extends StatelessWidget {
                     ),
                     Text(
                       '${weatherModel.location!.name}, ${weatherModel.location!.region}, ${weatherModel.location!.country}',
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ],
                 ),
