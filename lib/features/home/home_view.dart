@@ -71,7 +71,8 @@ class HomeView extends StatelessWidget {
                     return const Center(
                       child: Text(
                         'Start Search For City',
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
                       ),
                     );
                   },

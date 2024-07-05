@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:weather_app/features/home/persentation/data/models/weather_model.dart';
-import 'package:weather_app/features/search/views/widgets/min_max_temp.dart';
+import 'package:weather_app/features/search/views/widgets/temp_weather.dart';
 
 class ListViewContainer extends StatelessWidget {
   const ListViewContainer({
@@ -49,31 +49,7 @@ class ListViewContainer extends StatelessWidget {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          MinMaxTemp(
-                              weather: 'Max',
-                              number: day.day!.maxtempC!.toInt()),
-                          MinMaxTemp(
-                              weather: 'Min',
-                              number: day.day!.mintempC!.toInt()),
-                          Text(
-                            '${weatherModel.forecast!.forecastday![1].day!.condition!.text}',
-                            style: const TextStyle(color: Colors.grey),
-                          ),
-                        ],
-                      ),
-                      Image.network(
-                        'https:${weatherModel.forecast!.forecastday![1].day!.condition!.icon}',
-                        height: 100,
-                        width: 100,
-                      ),
-                    ],
-                  ),
+                  TempWeather(day: day, weatherModel: weatherModel),
                   Row(
                     children: [
                       const Icon(
